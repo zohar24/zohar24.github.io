@@ -587,7 +587,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>首先搭建hexo，之后可以使用Hexo的各种主题，这里使用matery主题。</p>
+                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>一直想搭建一个自己的博客网站，自己在网上找了一些框架，最终准备使用hexo搭建一个。</p>
+<p>Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a>（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。并可通过修改主题，让你的博客丰富多彩。</p>
 <h1 id="搭建Hexo"><a href="#搭建Hexo" class="headerlink" title="搭建Hexo"></a>搭建Hexo</h1><p>详细可参考 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs">Hexo官方文档</a></p>
 <p><strong>目录结构</strong></p>
 <ul>
@@ -637,7 +638,7 @@ $ <span class="token builtin class-name">cd</span> <span class="token operator">
 $ <span class="token function">npm</span> <span class="token function">install</span> <span class="token comment"># 安装必备的组件</span></code></pre>
 
 <p>之后就可以输入<code>hexo s</code>启动服务，效果如下：</p>
-<p><img src="/images/01.png"></p>
+<p><img src="01.png"></p>
 <p>按<code>ctrl+c</code>关闭本地服务器。</p>
 <p>Hexo常用命令</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">hexo g  <span class="token comment"># 生成博客网页文件</span>
@@ -751,8 +752,13 @@ categories<span class="token operator">:</span>
   
 <span class="token punctuation">---</span></code></pre>
 
+<h2 id="资源文件夹"><a href="#资源文件夹" class="headerlink" title="资源文件夹"></a>资源文件夹</h2><p>资源（Asset）代表 <code>source</code> 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中。然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
+<p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code> 来打开。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">_config.yml
+<span class="token key atrule">post_asset_folder</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></code></pre>
 
-
+<p>当资源文件管理功能打开后，Hexo将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个文章文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。</p>
+<p>详细可参考 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders">资源文件夹</a> 。    </p>
 <h2 id="配置修改"><a href="#配置修改" class="headerlink" title="配置修改"></a>配置修改</h2><p>修改配置文件<code>_config.yml</code></p>
 <pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> <span class="token comment"># title</span>
 <span class="token key atrule">subtitle</span><span class="token punctuation">:</span> <span class="token comment"># 二级标题</span>
@@ -777,7 +783,7 @@ categories<span class="token operator">:</span>
 <p>打开<a target="_blank" rel="noopener" href="http://github.com/">github</a>，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个SSH，名字随意。</p>
 <p>将公钥id_rsa.pub复制到框中，点击确定保存。</p>
 <p>输入<code>ssh -T git@github.com</code>，如果如下图所示，出现你的用户名，那就成功了。</p>
-<p><img src="/images/02.png"></p>
+<p><img src="02.png"></p>
 <p>新建一个username.github.io的项目，然后修改根目录下的<code>_config.yml</code>文件。</p>
 <p>修改最后一行的配置：</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">deploy:
