@@ -520,15 +520,48 @@
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
             不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐 
         </div>
-		<div align="middle">
-            <img src="/medias/contact.jpg" width="80%" >
-        </div>
+		
     </div>
 </div>
 
                     
 
                     
+                        
+
+<link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<div class="music-player">
+    
+    <div class="title center-align">
+        <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
+    </div>
+    
+    <div class="row">
+        <div class="col l8 offset-l2 m10 offset-m1 s12">
+            <div id="aplayer" class="music"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script>
+$(function () {
+    new APlayer({
+        container: document.getElementById('aplayer'),
+        fixed: 'false' === 'true',
+        autoplay: 'false' === 'true',
+        theme: '#42b983',
+        loop: 'all',
+        order: 'list',
+        preload: 'auto',
+        volume: Number('0.7'),
+        listFolded: 'true' === 'true',
+        listMaxHeight: '',
+        audio: JSON.parse('[{"name":"我们的时光","artist":"赵雷","url":"/medias/music/赵雷 - 我们的时光.mp3","cover":"/medias/music/cover2.png"},{"name":"彩虹下面","artist":"赵雷","url":"/medias/music/赵雷 - 彩虹下面.mp3","cover":"/medias/music/cover2.png"},{"name":"月亮粑粑","artist":"赵雷","url":"/medias/music/赵雷 - 月亮粑粑 (Live).mp3","cover":"/medias/music/cover2.png"}]')
+    });
+});
+</script>
+                        
 
                     
 
@@ -548,30 +581,6 @@
     
     <div class="col s12" >
         
-            <div class="post-card" style="background-image: url('/medias/featureimages/18.jpg')">
-            
-            <div class="post-body">
-                <div class="post-categories">
-                    
-                        
-                            <a href="/categories/%E6%89%93%E5%93%AD%E5%BC%A0%E4%B9%90%E4%B9%90/" class="category">打哭张乐乐</a>
-                        
-                    
-                </div>
-                <a href="/2022/08/05/test/">
-                    <h3 class="post-title">打哭张乐乐</h3>
-                </a>
-                <p class="post-description">张乐乐 你好!我不打哭你?Welcome to Hexo! This is your very first post. Check documentation for m</p>
-                <a href="/2022/08/05/test/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
-                    <i class="icon far fa-eye fa-fw"></i>阅读更多
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="col s12 m6" data-aos="zoom-in-up">
-        
             <div class="post-card" style="background-image: url('/medias/featureimages/17.jpg')">
             
             <div class="post-body">
@@ -586,8 +595,8 @@
                     <h3 class="post-title">Hexo博客搭建</h3>
                 </a>
                 <p class="post-description">概述一直想搭建一个自己的博客网站，自己在网上找了一些框架，最终准备使用hexo搭建一个。
-Hexo是一个快速、简洁且高效的博客框架。Hexo</p>
-                <a href="/2022/08/14/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其</p>
+                <a href="/2022/08/14/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -612,7 +621,31 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo</p>
                 </a>
                 <p class="post-description">JAVA查看java进程：ps aux|grep java 
 日志操作实时查看日志，并显示之前的200行：tail -200f XXX.lo</p>
-                <a href="/2022/08/17/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
+                <a href="/2022/08/17/Linux%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #EF4DB6 0%, #C643FC 100%)" target="_blank">
+                    <i class="icon far fa-eye fa-fw"></i>阅读更多
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="col s12 m6" data-aos="zoom-in-up">
+        
+            <div class="post-card" style="background-image: url('/medias/featureimages/5.jpg')">
+            
+            <div class="post-body">
+                <div class="post-categories">
+                    
+                        
+                            <a href="/categories/gradle/" class="category">gradle</a>
+                        
+                    
+                </div>
+                <a href="/2022/08/14/gradle%E4%BD%BF%E7%94%A8/">
+                    <h3 class="post-title">Gradle 安装</h3>
+                </a>
+                <p class="post-description">Gradle 安装前的准备Gradle 可以安装在 Linux，macOS，Windows 等主流操作系统，唯一的要求就是操作系统上已经安装</p>
+                <a href="/2022/08/14/gradle%E4%BD%BF%E7%94%A8/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #1AD6FD 0%, #1D62F0 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -742,6 +775,57 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2022/08/14/gradle%E4%BD%BF%E7%94%A8/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Gradle 安装">
+                            
+                            <span class="card-title">Gradle 安装</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Gradle 安装前的准备Gradle 可以安装在 Linux，macOS，Windows 等主流操作系统，唯一的要求就是操作系统上已经安装了 Java JDK 7 及以上版本。可以通过 java -version 验证是否满足条件，以下是
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-14
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/gradle/" class="post-category">
+                                    gradle
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%80%BB%E7%BB%93/">
+                            <span class="chip bg-color">总结</span>
+                        </a>
+                        
+                        <a href="/tags/gradle/">
+                            <span class="chip bg-color">gradle</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2022/08/05/test/">
                         <div class="card-image">
                             
@@ -800,60 +884,6 @@ Hexo是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（�
 
 
     <footer class="page-footer bg-color">
-    
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
     
     <div class="container row center-align" style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
