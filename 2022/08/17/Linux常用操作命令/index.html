@@ -484,8 +484,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h1><p>查看java进程：ps aux|grep java </p>
-<h3 id="日志操作"><a href="#日志操作" class="headerlink" title="日志操作"></a>日志操作</h3><p>实时查看日志，并显示之前的200行：tail -200f XXX.log</p>
+                <h1 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h1><p>操作系统 Operating System 简称 OS，通俗讲就是一款软件，不过和一般的软件不同，操作系统是管理和控制计算机硬件与软件资源的计算机程序，是直接运行在“裸机”上的最基本的系统软件，任何其他的软件都必须在操作系统的支持下才能运行。</p>
+<h2 id="Linux-文件系统"><a href="#Linux-文件系统" class="headerlink" title="Linux 文件系统"></a>Linux 文件系统</h2><ul>
+<li><p><strong>/var：</strong>包含在正常操作中被改变的文件、假脱机文件、记录文件、加锁文件、临时文件和页格式化文件等。</p>
+</li>
+<li><p><strong>/home：</strong> 包含用户的文件：参数设置文件、个性化文件、文档、数据、EMALL、缓存数据等，每增加一个用户，系统就会根据其用户名在 home 目录下新建和其他用户同名的文件夹，用于保存其用户配置。</p>
+</li>
+<li><p><strong>/proc：</strong>包含虚幻的文件，他们实际上并不存在于磁盘上，也不占用任何空间（用 ls-l 可以显示它们的大小）当查看这些文件时，实际上是在访问存在内存中的信息，这些信息用于访问系统。</p>
+</li>
+<li><p><strong>/bin：</strong>包含系统启动时需要的执行文件（二进制），这些文件可以被普通用户使用。</p>
+</li>
+<li><p><strong>/etc：</strong>为操作系统的配置文件目录（防火墙、启动项）</p>
+</li>
+<li><p><strong>/root：</strong>为系统管理员（也叫超级用户或根用户）的 Home 目录。</p>
+</li>
+<li><p><strong>/dev：</strong>为设备目录，Linux下设备被当成文件，这样一来硬件被抽象化、便于读写、网络共享以及需要临时装载到文件系统中，正常情况下，设备会有一个独立的子目录，这些设备的内容会出现在独立的子目录下。</p>
+</li>
+</ul>
 <h1 id="空间"><a href="#空间" class="headerlink" title="空间"></a>空间</h1><h2 id="df"><a href="#df" class="headerlink" title="df"></a>df</h2><ul>
 <li><p>df -h ：查看硬盘剩余容量</p>
 <pre class="language-bash" data-language="bash"><code class="language-bash">df（英文全拼：disk free） 命令用于显示目前在 Linux 系统上的文件系统磁盘使用情况统计。</code></pre></li>
