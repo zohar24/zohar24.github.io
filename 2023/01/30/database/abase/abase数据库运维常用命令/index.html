@@ -1,0 +1,1443 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="abase数据库运维常用命令, zohar_keywords">
+    <meta name="description" content="zohar_description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>abase数据库运维常用命令 | Zohar</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zohar</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zohar</div>
+        <div class="logo-desc">
+            
+            zohar_description
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/zohar24/hexo-theme-zohar" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/zohar24/hexo-theme-zohar" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">abase数据库运维常用命令</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/abase/">
+                                <span class="chip bg-color">abase</span>
+                            </a>
+                        
+                            <a href="/tags/postgre/">
+                                <span class="chip bg-color">postgre</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-01-30
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>随着生产环境下abase数据库越来越多，使用过程中会面临下面几个问题，本文针对这些问题进行一些总结。</p>
+<ol>
+<li>数据库出现性能问题如何排查</li>
+<li>日常需要进行哪些数据库维护操作</li>
+<li>数据库备份恢复该使用哪种方式</li>
+</ol>
+<p>[TOC]</p>
+<h1 id="一、性能问题排查"><a href="#一、性能问题排查" class="headerlink" title="一、性能问题排查"></a>一、性能问题排查</h1><h2 id="1-1-查询锁等待"><a href="#1-1-查询锁等待" class="headerlink" title="1.1 查询锁等待"></a>1.1 查询锁等待</h2><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查询锁等待的进程号</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> pg_locks <span class="token keyword">where</span> granted<span class="token operator">=</span><span class="token string">'f'</span><span class="token punctuation">;</span>
+<span class="token comment">-- 查询是哪个进程阻塞的</span>
+<span class="token keyword">select</span> pg_blocking_pids<span class="token punctuation">(</span>进程号<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 多次查询上述命令，直到结果为&#123;&#125;,确定最初是哪个进程导致的问题。</span>
+<span class="token comment">-- 查看进程正在执行的sql</span>
+<span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> pg_stat_activity <span class="token keyword">where</span> pid<span class="token operator">=</span>进程号<span class="token punctuation">;</span></code></pre>
+
+<h2 id="1-2-查询耗cpu高的sql（实时）"><a href="#1-2-查询耗cpu高的sql（实时）" class="headerlink" title="1.2 查询耗cpu高的sql（实时）"></a>1.2 查询耗cpu高的sql（实时）</h2><p>postgres 数据库是多进程数据库，每个数据库连接是单独的进程。可以通过linux的命令查看耗cpu高的进程。</p>
+<p>如top命令，按c可以看进程的更多信息。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">  PID <span class="token environment constant">USER</span>      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND               
+<span class="token number">29992</span> appuser   <span class="token number">20</span>   <span class="token number">0</span> <span class="token number">16</span>.661g <span class="token number">787440</span> <span class="token number">768960</span> R  <span class="token number">99.7</span>  <span class="token number">0.1</span>   <span class="token number">0</span>:45.98 postgres: sa abase <span class="token punctuation">[</span>local<span class="token punctuation">]</span> SELECT  </code></pre>
+
+<p>或使用pidstat命令，获取占用cpu高的进程。</p>
+<pre class="language-none"><code class="language-none">pidstat -u 5 1 
+平均时间:   UID       PID    %usr %system  %guest    %CPU   CPU  Command
+平均时间:  1007     29992   89.63    9.00    0.00   98.63     -  postgres
+平均时间:     0     32765    0.20    0.20    0.00    0.39     -  java
+平均时间:  1007     42047    0.39    1.37    0.00    1.76     -  pidstat
+平均时间:  1007     42062   36.59    3.72    0.00   40.31     -  postgres</code></pre>
+
+<p>得到耗cpu的进程pid后，到数据库中查看具体执行的sql语句。 </p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">abase<span class="token operator">=</span><span class="token comment"># select pid,usename,application_name,client_addr,state,query from pg_stat_activity where pid = 29992;</span>
+  pid  <span class="token operator">|</span> usename <span class="token operator">|</span> application_name <span class="token operator">|</span> client_addr <span class="token operator">|</span> state  <span class="token operator">|</span>               query               
+<span class="token comment">-------+---------+------------------+-------------+--------+-----------------------------------</span>
+ <span class="token number">29992</span> <span class="token operator">|</span> sa      <span class="token operator">|</span> psql             <span class="token operator">|</span>             <span class="token operator">|</span> active <span class="token operator">|</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> ywst<span class="token punctuation">.</span>t1<span class="token punctuation">,</span>ywst<span class="token punctuation">.</span>t1 t2<span class="token punctuation">;</span></code></pre>
+
+<h2 id="1-3-查询耗io高的sql（实时）"><a href="#1-3-查询耗io高的sql（实时）" class="headerlink" title="1.3 查询耗io高的sql（实时）"></a>1.3 查询耗io高的sql（实时）</h2><p>使用pidstat命令，获取占用io高的进程。  </p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">pidstat -d <span class="token number">5</span> <span class="token number">1</span> 
+<span class="token number">10</span>时22分38秒   <span class="token environment constant">UID</span>       PID   kB_rd/s   kB_wr/s kB_ccwr/s  Command
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>      <span class="token number">4196</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>      <span class="token number">4209</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>      <span class="token number">4211</span>      <span class="token number">0.00</span>     <span class="token number">23.44</span>     <span class="token number">15.62</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>     <span class="token number">18947</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>     <span class="token number">18948</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>     <span class="token number">18949</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>     <span class="token number">18950</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+<span class="token number">10</span>时22分43秒  <span class="token number">1007</span>     <span class="token number">18964</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+
+平均时间:   <span class="token environment constant">UID</span>       PID   kB_rd/s   kB_wr/s kB_ccwr/s  Command
+平均时间:  <span class="token number">1007</span>      <span class="token number">4196</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>      <span class="token number">4209</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>      <span class="token number">4211</span>      <span class="token number">0.00</span>     <span class="token number">23.44</span>     <span class="token number">15.62</span>  postgres
+平均时间:  <span class="token number">1007</span>     <span class="token number">18947</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>     <span class="token number">18948</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>     <span class="token number">18949</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>     <span class="token number">18950</span>      <span class="token number">0.00</span>      <span class="token number">3.12</span>      <span class="token number">0.00</span>  postgres
+平均时间:  <span class="token number">1007</span>     <span class="token number">18964</span>      <span class="token number">0.00</span>      <span class="token number">1.56</span>      <span class="token number">0.00</span>  postgres</code></pre>
+
+<p>得到进程号后，到数据库中查看具体执行的sql语句。与确定耗cpu的sql方法一致。</p>
+<h2 id="1-4-查询慢sql（历史）"><a href="#1-4-查询慢sql（历史）" class="headerlink" title="1.4 查询慢sql（历史）"></a>1.4 查询慢sql（历史）</h2><h3 id="方法一-设置数据库参数"><a href="#方法一-设置数据库参数" class="headerlink" title="方法一 设置数据库参数"></a>方法一 设置数据库参数</h3><p>设置log_min_duration_statement参数，在sql执行时间超过参数值时记录到数据库日志中。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 记录所有类型执行时间超过3秒的sql</span>
+<span class="token keyword">alter</span> system <span class="token keyword">set</span> log_statement <span class="token operator">=</span> <span class="token string">'all'</span><span class="token punctuation">;</span>
+<span class="token keyword">alter</span> system <span class="token keyword">set</span> log_min_duration_statement<span class="token operator">=</span><span class="token string">'3000'</span><span class="token punctuation">;</span></code></pre>
+<h3 id="方法二-使用pg-stat-statements插件"><a href="#方法二-使用pg-stat-statements插件" class="headerlink" title="方法二 使用pg_stat_statements插件"></a>方法二 使用pg_stat_statements插件</h3><p>插件会对数据库性能带来一定影响（影响不大），但记录的信息会很详细，包括sql执行次数，平均执行时间等信息。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 修改配置文件，注意shared_preload_libraries参数若已有值，则增加pg_stat_statements，用逗号分隔。</span>
+shared_preload_libraries <span class="token operator">=</span> <span class="token string">'pg_stat_statements'</span>
+pg_stat_statements<span class="token punctuation">.</span>max <span class="token operator">=</span> <span class="token number">10000</span>
+pg_stat_statements<span class="token punctuation">.</span>track <span class="token operator">=</span> <span class="token keyword">all</span>
+<span class="token comment">-- 重启数据库后，创建插件。</span>
+<span class="token keyword">create</span> extension pg_stat_statements<span class="token punctuation">;</span>
+<span class="token comment">-- 查询慢sql</span>
+<span class="token keyword">select</span> query<span class="token punctuation">,</span> calls<span class="token punctuation">,</span> total_time<span class="token punctuation">,</span> <span class="token punctuation">(</span>total_time<span class="token operator">/</span>calls<span class="token punctuation">)</span> <span class="token keyword">as</span> average<span class="token punctuation">,</span> <span class="token keyword">rows</span><span class="token punctuation">,</span> <span class="token number">100.0</span> <span class="token operator">*</span> shared_blks_hit<span class="token operator">/</span><span class="token keyword">nullif</span><span class="token punctuation">(</span>shared_blks_hit <span class="token operator">+</span> shared_blks_read<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">AS</span> hit_percent 
+<span class="token keyword">from</span> pg_stat_statements 
+<span class="token keyword">order</span> <span class="token keyword">by</span> average <span class="token keyword">desc</span> <span class="token keyword">limit</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token comment">-- 清空历史慢sql记录</span>
+<span class="token keyword">select</span> pg_stat_statements_reset<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="1-5-断开数据库会话进程"><a href="#1-5-断开数据库会话进程" class="headerlink" title="1.5 断开数据库会话进程"></a>1.5 断开数据库会话进程</h2><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 方法1：数据库中执行，推荐方式。下面2个命令区别是cancle取消查询语句，不会断开会话，但有时会不成功。terminate是中断会话，回滚未提交事务。</span>
+<span class="token keyword">select</span> pg_cancle_backend<span class="token punctuation">(</span>进程号<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">select</span> pg_terminate_backend<span class="token punctuation">(</span>进程号<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token comment">-- 方法2：操作系统下执行，严禁执行Kill -9 进程号，否则会导致数据库postmaster主进程重启。仅当数据库无法连接时使用，仅可针对数据库会话进程执行。</span>
+<span class="token keyword">kill</span> 进程号</code></pre>
+
+<h2 id="1-6-批量断开某类数据库会话进程"><a href="#1-6-批量断开某类数据库会话进程" class="headerlink" title="1.6 批量断开某类数据库会话进程"></a>1.6 批量断开某类数据库会话进程</h2><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 显示正在执行查询语句（sql以select开头）的进程信息 ，并断开进程。</span>
+<span class="token keyword">select</span> pg_terminate_backend<span class="token punctuation">(</span>pid<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">*</span> <span class="token keyword">from</span> pg_stat_activity <span class="token keyword">where</span> state<span class="token operator">=</span><span class="token string">'active'</span> <span class="token operator">and</span> lower<span class="token punctuation">(</span>query<span class="token punctuation">)</span> <span class="token operator">like</span> <span class="token string">'select%'</span> <span class="token operator">and</span> pid <span class="token operator">&lt;></span> pg_backend_pid<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<p>或操作系统下执行，仅当数据库无法正常连接时使用。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">-- 如下列命令会杀掉全部6543端口数据库下的select进程
+<span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> <span class="token variable"><span class="token variable">`</span><span class="token function">head</span> -1 /tmp/.s.PGSQL.6543.lock<span class="token variable">`</span></span><span class="token operator">|</span><span class="token function">grep</span> SELECT<span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'&#123;print $2&#125;'</span><span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">kill</span></code></pre>
+
+<h2 id="1-7-查看sql执行计划"><a href="#1-7-查看sql执行计划" class="headerlink" title="1.7 查看sql执行计划"></a>1.7 查看sql执行计划</h2><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 查看查询语句执行计划</span>
+<span class="token keyword">explain</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> t<span class="token punctuation">;</span>
+<span class="token comment">-- 查看查询语句执行计划，并显示实际执行情况。增加analyze选项，sql语句会被实际执行。</span>
+<span class="token keyword">explain</span> <span class="token keyword">analyze</span> <span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">from</span> t<span class="token punctuation">;</span>
+<span class="token comment">-- 查看更新/删除/插入语句执行计划，并显示实际执行情况。</span>
+<span class="token keyword">begin</span><span class="token punctuation">;</span>
+<span class="token keyword">explain</span> <span class="token keyword">analyze</span> <span class="token keyword">update</span><span class="token operator">/</span><span class="token keyword">delete</span><span class="token operator">/</span><span class="token keyword">insert</span><span class="token punctuation">;</span>
+<span class="token keyword">rollback</span><span class="token punctuation">;</span>		</code></pre>
+
+<h2 id="1-8-查询表上有哪些索引"><a href="#1-8-查询表上有哪些索引" class="headerlink" title="1.8 查询表上有哪些索引"></a>1.8 查询表上有哪些索引</h2><p>查询pg_indexes获取表上有哪些索引</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql">abase<span class="token operator">=</span><span class="token comment"># select * from pg_indexes where schemaname='msaj' and tablename='t_ms_aj_jc';</span>
+ schemaname <span class="token operator">|</span> tablename  <span class="token operator">|</span>    indexname     <span class="token operator">|</span> <span class="token keyword">tablespace</span> <span class="token operator">|</span>                               indexdef
+<span class="token comment">------------+------------+------------------+------------+-----------------------------------------------------------------------</span>
+ msaj       <span class="token operator">|</span> t_ms_aj_jc <span class="token operator">|</span> i_ms_aj_jc_jbfy4 <span class="token operator">|</span>            <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy4 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>
+ msaj       <span class="token operator">|</span> t_ms_aj_jc <span class="token operator">|</span> i_ms_aj_jc_jbfy2 <span class="token operator">|</span>            <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy2 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>
+ msaj       <span class="token operator">|</span> t_ms_aj_jc <span class="token operator">|</span> i_ms_aj_jc_jbfy1 <span class="token operator">|</span>            <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy1 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>
+ msaj       <span class="token operator">|</span> t_ms_aj_jc <span class="token operator">|</span> i_ms_aj_jc_jbfy  <span class="token operator">|</span>            <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span></code></pre>
+
+<p>查询pg_index获取表上有哪些索引，以及索引状态等信息。修改WHERE c.oid=’msaj.t_ms_aj_jc’::regclass 部分的模式名表名。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">SELECT</span> c2<span class="token punctuation">.</span>relname<span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisprimary<span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisunique<span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisclustered<span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisvalid<span class="token punctuation">,</span> pg_catalog<span class="token punctuation">.</span>pg_get_indexdef<span class="token punctuation">(</span>i<span class="token punctuation">.</span>indexrelid<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  pg_catalog<span class="token punctuation">.</span>pg_get_constraintdef<span class="token punctuation">(</span>con<span class="token punctuation">.</span>oid<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">,</span> contype<span class="token punctuation">,</span> condeferrable<span class="token punctuation">,</span> condeferred<span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisreplident<span class="token punctuation">,</span> c2<span class="token punctuation">.</span>reltablespace
+<span class="token keyword">FROM</span> pg_catalog<span class="token punctuation">.</span>pg_class c<span class="token punctuation">,</span> pg_catalog<span class="token punctuation">.</span>pg_class c2<span class="token punctuation">,</span> pg_catalog<span class="token punctuation">.</span>pg_index i
+  <span class="token keyword">LEFT</span> <span class="token keyword">JOIN</span> pg_catalog<span class="token punctuation">.</span>pg_constraint con <span class="token keyword">ON</span> <span class="token punctuation">(</span>conrelid <span class="token operator">=</span> i<span class="token punctuation">.</span>indrelid <span class="token operator">AND</span> conindid <span class="token operator">=</span> i<span class="token punctuation">.</span>indexrelid <span class="token operator">AND</span> contype <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token string">'p'</span><span class="token punctuation">,</span><span class="token string">'u'</span><span class="token punctuation">,</span><span class="token string">'x'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">WHERE</span> c<span class="token punctuation">.</span>oid<span class="token operator">=</span><span class="token string">'msaj.t_ms_aj_jc'</span>::regclass <span class="token operator">AND</span> c<span class="token punctuation">.</span>oid <span class="token operator">=</span> i<span class="token punctuation">.</span>indrelid <span class="token operator">AND</span> i<span class="token punctuation">.</span>indexrelid <span class="token operator">=</span> c2<span class="token punctuation">.</span>oid
+<span class="token keyword">ORDER</span> <span class="token keyword">BY</span> i<span class="token punctuation">.</span>indisprimary <span class="token keyword">DESC</span><span class="token punctuation">,</span> i<span class="token punctuation">.</span>indisunique <span class="token keyword">DESC</span><span class="token punctuation">,</span> c2<span class="token punctuation">.</span>relname<span class="token punctuation">;</span>
+     relname      <span class="token operator">|</span> indisprimary <span class="token operator">|</span> indisunique <span class="token operator">|</span> indisclustered <span class="token operator">|</span> indisvalid <span class="token operator">|</span>                             pg_get_indexdef                             <span class="token operator">|</span> pg_get_constraintdef <span class="token operator">|</span> contype <span class="token operator">|</span> condeferrable <span class="token operator">|</span> condeferred <span class="token operator">|</span> indisreplident <span class="token operator">|</span> reltablespace
+<span class="token comment">------------------+--------------+-------------+----------------+------------+-------------------------------------------------------------------------+----------------------+---------+---------------+-------------+----------------+---------------</span>
+ t_ms_aj_jc_pkey  <span class="token operator">|</span> t            <span class="token operator">|</span> t           <span class="token operator">|</span> f              <span class="token operator">|</span> t          <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">UNIQUE</span> <span class="token keyword">INDEX</span> t_ms_aj_jc_pkey <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token operator">|</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span> <span class="token punctuation">(</span>id<span class="token punctuation">)</span>     <span class="token operator">|</span> p       <span class="token operator">|</span> f             <span class="token operator">|</span> f           <span class="token operator">|</span> f              <span class="token operator">|</span>             <span class="token number">0</span>
+ i_ms_aj_jc_jbfy  <span class="token operator">|</span> f            <span class="token operator">|</span> f           <span class="token operator">|</span> f              <span class="token operator">|</span> f          <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>    <span class="token operator">|</span>                      <span class="token operator">|</span>         <span class="token operator">|</span>               <span class="token operator">|</span>             <span class="token operator">|</span> f              <span class="token operator">|</span>             <span class="token number">0</span>
+ i_ms_aj_jc_jbfy1 <span class="token operator">|</span> f            <span class="token operator">|</span> f           <span class="token operator">|</span> f              <span class="token operator">|</span> f          <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy1 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>   <span class="token operator">|</span>                      <span class="token operator">|</span>         <span class="token operator">|</span>               <span class="token operator">|</span>             <span class="token operator">|</span> f              <span class="token operator">|</span>             <span class="token number">0</span>
+ i_ms_aj_jc_jbfy2 <span class="token operator">|</span> f            <span class="token operator">|</span> f           <span class="token operator">|</span> f              <span class="token operator">|</span> f          <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy2 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>   <span class="token operator">|</span>                      <span class="token operator">|</span>         <span class="token operator">|</span>               <span class="token operator">|</span>             <span class="token operator">|</span> f              <span class="token operator">|</span>             <span class="token number">0</span>
+ i_ms_aj_jc_jbfy4 <span class="token operator">|</span> f            <span class="token operator">|</span> f           <span class="token operator">|</span> f              <span class="token operator">|</span> t          <span class="token operator">|</span> <span class="token keyword">CREATE</span> <span class="token keyword">INDEX</span> i_ms_aj_jc_jbfy4 <span class="token keyword">ON</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">USING</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span>   <span class="token operator">|</span>                      <span class="token operator">|</span>         <span class="token operator">|</span>               <span class="token operator">|</span>             <span class="token operator">|</span> f              <span class="token operator">|</span>             <span class="token number">0</span></code></pre>
+
+<h2 id="1-9-创建-重建索引"><a href="#1-9-创建-重建索引" class="headerlink" title="1.9 创建/重建索引"></a>1.9 创建/重建索引</h2><p>创建索引和重建 的语法。若生产环境执行，需要增加CONCURRENTLY关键字，可以避免对表的独占锁锁定。reindex暂时不支持CONCURRENTLY并行方式（postgres12版本新增功能，abase6.0对应postgres11.1不支持），可以并行方式新建一个索引，然后删除旧索引。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 语法</span>
+<span class="token keyword">CREATE</span> <span class="token punctuation">[</span> <span class="token keyword">UNIQUE</span> <span class="token punctuation">]</span> <span class="token keyword">INDEX</span> <span class="token punctuation">[</span> CONCURRENTLY <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span> <span class="token keyword">IF</span> <span class="token operator">NOT</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">]</span> name <span class="token punctuation">]</span> <span class="token keyword">ON</span> table_name <span class="token punctuation">[</span> <span class="token keyword">USING</span> method <span class="token punctuation">]</span>
+    <span class="token punctuation">(</span> &#123; column_name <span class="token operator">|</span> <span class="token punctuation">(</span> expression <span class="token punctuation">)</span> &#125; <span class="token punctuation">[</span> <span class="token keyword">COLLATE</span> collation <span class="token punctuation">]</span> <span class="token punctuation">[</span> opclass <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token keyword">ASC</span> <span class="token operator">|</span> <span class="token keyword">DESC</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> NULLS &#123; <span class="token keyword">FIRST</span> <span class="token operator">|</span> <span class="token keyword">LAST</span> &#125; <span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">[</span> <span class="token keyword">WITH</span> <span class="token punctuation">(</span> storage_parameter <span class="token operator">=</span> <span class="token keyword">value</span> <span class="token punctuation">[</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">]</span>
+    <span class="token punctuation">[</span> <span class="token keyword">TABLESPACE</span> tablespace_name <span class="token punctuation">]</span>
+    <span class="token punctuation">[</span> <span class="token keyword">WHERE</span> predicate <span class="token punctuation">]</span>
+
+REINDEX <span class="token punctuation">[</span> <span class="token punctuation">(</span> VERBOSE <span class="token punctuation">)</span> <span class="token punctuation">]</span> &#123; <span class="token keyword">INDEX</span> <span class="token operator">|</span> <span class="token keyword">TABLE</span> <span class="token operator">|</span> <span class="token keyword">SCHEMA</span> <span class="token operator">|</span> <span class="token keyword">DATABASE</span> <span class="token operator">|</span> SYSTEM &#125; name
+
+<span class="token comment">-- 例子</span>
+<span class="token keyword">create</span> <span class="token keyword">index</span> concurrently i_ms_aj_jc_jbfy <span class="token keyword">on</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">using</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">-- 创建索引前可以临时设置较大的maintenance_work_mem加快索引创建速度，仅当前会话生效。</span>
+<span class="token keyword">set</span> maintenance_work_mem<span class="token operator">=</span><span class="token string">'2GB'</span><span class="token punctuation">;</span>
+<span class="token keyword">create</span> <span class="token keyword">index</span> concurrently i_ms_aj_jc_jbfy <span class="token keyword">on</span> msaj<span class="token punctuation">.</span>t_ms_aj_jc <span class="token keyword">using</span> <span class="token keyword">btree</span> <span class="token punctuation">(</span>c_jbfy<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="1-10-临时禁用某索引"><a href="#1-10-临时禁用某索引" class="headerlink" title="1.10 临时禁用某索引"></a>1.10 临时禁用某索引</h2><pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 修改索引是否有效字段为false，禁用索引。禁用时新数据依然会维护这个索引，一般用来调试SQL执行计划。</span>
+<span class="token keyword">update</span> pg_index <span class="token keyword">set</span> indisvalid<span class="token operator">=</span><span class="token boolean">false</span> <span class="token keyword">where</span> indexrelid<span class="token operator">=</span><span class="token string">'模式名.索引名'</span>::regclass<span class="token punctuation">;</span>
+
+<span class="token comment">-- 修改索引是否有效字段为true，恢复索引。</span>
+<span class="token keyword">update</span> pg_index <span class="token keyword">set</span> indisvalid<span class="token operator">=</span><span class="token boolean">true</span> <span class="token keyword">where</span> indexrelid<span class="token operator">=</span><span class="token string">'模式名.索引名'</span>::regclass<span class="token punctuation">;</span></code></pre>
+
+<h1 id="二、其他日常维护操作"><a href="#二、其他日常维护操作" class="headerlink" title="二、其他日常维护操作"></a>二、其他日常维护操作</h1><h2 id="2-1-更新统计信息"><a href="#2-1-更新统计信息" class="headerlink" title="2.1 更新统计信息"></a>2.1 更新统计信息</h2><p>更新统计信息<code>analyze</code>命令，会在表级别增加<code>ShareUpdateExclusiveLock</code>锁。不影响正常的dml操作，若有必要可以在工作时间段执行。建议每周非业务时间执行一次。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 更新单张表统计信息</span>
+<span class="token keyword">analyze</span> 表名<span class="token punctuation">;</span>
+<span class="token comment">-- 更新数据库下所有表统计信息</span>
+<span class="token keyword">analyze</span><span class="token punctuation">;</span>
+<span class="token comment">-- 更新统计信息前可以临时设置较大的maintenance_work_mem加快分析速度。</span>
+<span class="token keyword">set</span> maintenance_work_mem<span class="token operator">=</span><span class="token string">'2GB'</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> max_parallel_maintenance_workers <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+<span class="token keyword">analyze</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="2-2-整理碎片"><a href="#2-2-整理碎片" class="headerlink" title="2.2 整理碎片"></a>2.2 整理碎片</h2><p>整理碎片<code>vacuum ful</code>l命令，会在表级别增加<code>AccessExclusiveLock</code>锁。影响表的其他访问，必须在非工作时段执行。整理碎片会自动重建表上的索引，建议一个月执行一次。需要观察执行耗时，若耗时较长可分多个会话并行执行（每个客户端整理部分表）。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 整理单表碎片，并更新统计信息。</span>
+vacuum <span class="token keyword">full</span> <span class="token keyword">analyze</span> 表名<span class="token punctuation">;</span>
+<span class="token comment">-- 对数据库下所有表进行碎片整理，并更新统计信息</span>
+vacuum <span class="token keyword">full</span> <span class="token keyword">analyze</span><span class="token punctuation">;</span>
+<span class="token comment">-- 整理碎片前可以临时设置较大的maintenance_work_mem加快整理速度。</span>
+<span class="token keyword">set</span> maintenance_work_mem<span class="token operator">=</span><span class="token string">'2GB'</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> max_parallel_maintenance_workers <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+vacuum <span class="token keyword">full</span> <span class="token keyword">analyze</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="2-3-清理表内历史版本数据"><a href="#2-3-清理表内历史版本数据" class="headerlink" title="2.3 清理表内历史版本数据"></a>2.3 清理表内历史版本数据</h2><p>与<code>vacuum full</code>不同，vacuum仅对表内历史版本数据进行清理，并不回收空间。执行时会在表级别增加<code>ShareUpdateExclusiveLock</code>锁。不影响正常的dml操作，若有必要可以在工作时间段执行。建议每周非业务时间执行一次。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 清理单张表</span>
+vacuum 表名<span class="token punctuation">;</span>
+<span class="token comment">-- 对数据库下所有表进行清理</span>
+vacuum<span class="token punctuation">;</span>
+<span class="token comment">-- 清理前可以临时设置较大的maintenance_work_mem加快清理速度。</span>
+<span class="token keyword">set</span> maintenance_work_mem<span class="token operator">=</span><span class="token string">'2GB'</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> max_parallel_maintenance_workers <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+vacuum <span class="token keyword">analyze</span><span class="token punctuation">;</span></code></pre>
+
+<h2 id="2-4-冻结表内事物id"><a href="#2-4-冻结表内事物id" class="headerlink" title="2.4 冻结表内事物id"></a>2.4 冻结表内事物id</h2><p>abase数据库根据行内隐藏列xmin、xmax记录的事物id，以及事物的提交记录判断记录的可见性。而事物id是32位的整数，40亿+循环使用。为了避免事物无法判断新旧（即事物回卷），数据库需要讲过老的事物id进行冻结。表的年龄可以认为是表上最早事物id距离当前事物id的距离。默认情况当表年龄达到2亿，自动运行autovacuum进程时，会触发<code>vacuum freeze</code>操作。</p>
+<p><code>vacuum freeze</code>会在表级别增加<code>ShareUpdateExclusiveLock</code>，行级别增加<code>RowExclusiveLock</code>，对系统影响较大。因此我们需要定期监控表年龄增长情况，及时手工运行<code>vacuum freeze;</code>命令。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token comment">-- 冻结单张表</span>
+vacuum freeze 表名<span class="token punctuation">;</span>
+<span class="token comment">-- 对数据库下所有表进行清理</span>
+vacuum freeze<span class="token punctuation">;</span>
+<span class="token comment">-- 清理前可以临时设置较大的maintenance_work_mem加快清理速度。</span>
+<span class="token keyword">set</span> maintenance_work_mem<span class="token operator">=</span><span class="token string">'2GB'</span><span class="token punctuation">;</span>
+<span class="token keyword">set</span> max_parallel_maintenance_workers <span class="token operator">=</span> <span class="token number">8</span><span class="token punctuation">;</span>
+vacuum freeze<span class="token punctuation">;</span></code></pre>
+
+<p> <font color=#ff0000 face="黑体"><strong>注：若未定期检查，导致生产数据库表年龄达到2亿，触发了autovacuum的freeze操作，影响数据库使用时。可临时修改autovacuum_freeze_max_age为更大的值，如4亿，修改后重启数据库生效。这样数据库暂时就不会触发freeze操作。待周末非工作时间，手工执行<code>vacuum freeze</code>冻结事物id。冻结后，需要将autovacuum_freeze_max_age改回2亿。</strong> </font> </p>
+<h2 id="2-5-查看年龄过大的表"><a href="#2-5-查看年龄过大的表" class="headerlink" title="2.5 查看年龄过大的表"></a>2.5 查看年龄过大的表</h2><p>当表年龄超过1亿时，在非工作时间执行<code>vacuum freeze;</code>冻结表上事物id。可以运行下列语句，查看年龄大于1亿的表。</p>
+<pre class="language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">select</span> current_database<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    nspname<span class="token punctuation">,</span> 
+    <span class="token keyword">case</span> relkind <span class="token keyword">when</span> $$r$$ <span class="token keyword">then</span> $$ordinary <span class="token keyword">table</span>$$ <span class="token keyword">when</span> $$t$$ <span class="token keyword">then</span> $$toast <span class="token keyword">table</span>$$ <span class="token keyword">end</span> <span class="token keyword">as</span> relkind<span class="token punctuation">,</span>
+    relname<span class="token punctuation">,</span>
+    age<span class="token punctuation">(</span>relfrozenxid<span class="token punctuation">)</span><span class="token punctuation">,</span> 
+    <span class="token keyword">case</span> <span class="token keyword">when</span> <span class="token punctuation">(</span>substring<span class="token punctuation">(</span>reloptions::<span class="token keyword">text</span><span class="token punctuation">,</span>$$autovacuum_freeze_max_age<span class="token operator">=</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span>$$<span class="token punctuation">)</span>::int8<span class="token punctuation">)</span> <span class="token operator">is</span> <span class="token operator">not</span> <span class="token boolean">null</span> <span class="token keyword">then</span> <span class="token punctuation">(</span>substring<span class="token punctuation">(</span>reloptions::<span class="token keyword">text</span><span class="token punctuation">,</span>$$autovacuum_freeze_max_age<span class="token operator">=</span><span class="token punctuation">(</span>\d<span class="token operator">+</span><span class="token punctuation">)</span>$$<span class="token punctuation">)</span>::int8<span class="token punctuation">)</span><span class="token operator">-</span>age<span class="token punctuation">(</span>relfrozenxid<span class="token punctuation">)</span> 
+         <span class="token keyword">else</span> <span class="token punctuation">(</span><span class="token keyword">select</span> setting <span class="token keyword">from</span> pg_settings <span class="token keyword">where</span> name<span class="token operator">=</span>$$autovacuum_freeze_max_age$$<span class="token punctuation">)</span>::int8 <span class="token operator">-</span> age<span class="token punctuation">(</span>relfrozenxid<span class="token punctuation">)</span> 
+    <span class="token keyword">end</span> <span class="token keyword">as</span> age_remain<span class="token punctuation">,</span>
+	$$vacuum freeze $$<span class="token operator">||</span>nspname<span class="token operator">||</span>$$<span class="token punctuation">.</span>$$<span class="token operator">||</span>relname<span class="token operator">||</span>$$<span class="token punctuation">;</span>$$ <span class="token keyword">as</span> cmd
+<span class="token keyword">from</span> pg_class t2 <span class="token keyword">join</span> pg_namespace t3 <span class="token keyword">on</span> t2<span class="token punctuation">.</span>relnamespace<span class="token operator">=</span>t3<span class="token punctuation">.</span>oid 
+<span class="token keyword">where</span> t2<span class="token punctuation">.</span>relkind <span class="token operator">in</span> <span class="token punctuation">(</span>$$t$$<span class="token punctuation">,</span> $$r$$<span class="token punctuation">)</span> <span class="token operator">and</span> t2<span class="token punctuation">.</span>relname <span class="token operator">LIKE</span> $$t_<span class="token operator">%</span>$$ <span class="token operator">and</span> age<span class="token punctuation">(</span>relfrozenxid<span class="token punctuation">)</span> <span class="token operator">></span> <span class="token number">100000000</span>
+<span class="token keyword">order</span> <span class="token keyword">by</span> age<span class="token punctuation">(</span>relfrozenxid<span class="token punctuation">)</span> <span class="token keyword">desc</span><span class="token punctuation">;</span></code></pre>
+
+
+<h1 id="三、备份恢复"><a href="#三、备份恢复" class="headerlink" title="三、备份恢复"></a>三、备份恢复</h1><h2 id="3-1-逻辑导出导入"><a href="#3-1-逻辑导出导入" class="headerlink" title="3.1 逻辑导出导入"></a>3.1 逻辑导出导入</h2><p>针对一些数据安全性要求低，故障时可以接受丢失当天数据的应用，可以采用pg_dump进行数据备份（更推荐3.2的备份方式）。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">-- 备份
+-- 备份abase数据库
+pg_dump -Usa -dabase <span class="token operator">></span> abase.dmp
+-- 备份abase数据库下的ywst模式、db_aty模式
+pg_dump -Usa -dabase -n ywst -n db_aty <span class="token operator">></span> ywst_db_aty.dmp
+-- 备份abase数据库下的ywst.t1表、ywst.t2表
+pg_dump -Usa -dabase -t ywst.t1 -t ywst.t2 <span class="token operator">></span> t1_t2.dmp
+-- 备份用户、角色信息
+pg_dumpall -r <span class="token operator">></span> role.dmp
+-- 备份abase数据库建库建表语句（不包括索引约束）
+pg_dump -Usa -dabase --section<span class="token operator">=</span>pre-data
+-- 备份abase数据库的数据
+pg_dump -Usa -dabase --section<span class="token operator">=</span>data
+-- 备份abase数据库的索引及约束
+pg_dump -Usa -dabase --section<span class="token operator">=</span>post-data
+-- 恢复
+-- 是否需要提前创建库或模式，可以看一下备份文件开头是否有创建库或模式的命令。
+psql -Usa -dabase <span class="token operator">&lt;</span> 备份文件</code></pre>
+
+<h2 id="3-2-备份恢复"><a href="#3-2-备份恢复" class="headerlink" title="3.2 备份恢复"></a>3.2 备份恢复</h2><p>abase数据库备份推荐使用安装包带的arterybase-wal-backup-linux-6.0.0工具，工具会开启数据库日志归档，配合每天晚上的基础备份，支持做基于时间点的恢复，可以恢复到任意故障时刻之前。适合数据安全级别高的应用，对磁盘空间的要求较大，需要存储大量归档日志。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">-- 工具基于abase的pg_basebackup命令实现，主要命令如下。
+pg_basebackup -D <span class="token variable">$bakdir</span> -Ft -z -U <span class="token variable">$&#123;PGUSER&#125;</span> -p <span class="token variable">$&#123;PGPORT&#125;</span></code></pre>
+
+<p>具体工具的使用及恢复方法见《ArteryBase基于事务日志的增量备份工具使用说明.pdf》。</p>
+<p><strong>注：归档日志无法配合pg_dump进行数据恢复，需要使用pg_basebackup进行基础备份。</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">zohar</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zohar24.github.io/2023/01/30/database/abase/abase%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">https://zohar24.github.io/2023/01/30/database/abase/abase%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%90%E7%BB%B4%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">zohar</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/abase/">
+                                    <span class="chip bg-color">abase</span>
+                                </a>
+                            
+                                <a href="/tags/postgre/">
+                                    <span class="chip bg-color">postgre</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.png" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '9d1a553456e67bd27b58',
+        clientSecret: 'bc4bff1611fb48588eb53e5ee5795f169f6d59ef',
+        repo: 'zohar24.github.io',
+        owner: 'zohar24',
+        admin: "zohar24",
+        id: '2023/01/30/database/abase/abase数据库运维常用命令/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/01/30/database/abase/abase%E5%9F%BA%E7%A1%80sql/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Abase基础SQL">
+                        
+                        <span class="card-title">Abase基础SQL</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/abase/">
+                        <span class="chip bg-color">abase</span>
+                    </a>
+                    
+                    <a href="/tags/postgre/">
+                        <span class="chip bg-color">postgre</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/01/29/java/java%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="java性能优化">
+                        
+                        <span class="card-title">java性能优化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+                        <span class="chip bg-color">性能优化</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022-2023</span>
+            
+            <span id="year">2022</span>
+            <a href="/about" target="_blank">zohar</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zohar24" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1099124644@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1099124644" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1099124644" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+	
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
