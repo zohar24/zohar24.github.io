@@ -640,24 +640,32 @@ tar -zcpvf myarchive.tar.gz &#x2F;etc&#x2F; &#x2F;opt&#x2F; #注-zcpvf顺序不�
 tar -zxpvf myarchive.tgz -C &#x2F;tmp&#x2F; #解压 .tar.gz</code></pre>
 
 <h1 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h1><ul>
-<li>service iptables status 、firewall-cmd –state或service firewalld status 防火墙状态<pre class="language-sh" data-language="sh"><code class="language-sh"># 查看防火墙状态
+<li><p>查看防火墙状态</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh"># centos7
 service iptables status
-systemctl status firewalld.service
-# 停止防火墙
-service iptables stop
-systemctl stop firewalld.service
-# 启动防火墙
-service iptables start
-systemctl start firewalld.service
-# 重启防火墙
-service iptables restart 
-systemctl restart firewalld.service
-# 永久关闭防火墙
-chkconfig iptables off  
-# 永久关闭后重启
-chkconfig iptables on　
-# 禁用防火墙
-systemctl disable firewalld.service</code></pre></li>
+# centos8
+service firewalld status
+firewall-cmd --state</code></pre></li>
+<li><p>添加端口</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment">#centos7</span>
+/sbin/iptables -I INPUT -p tcp --dport <span class="token number">8080</span> -j  <span class="token comment">#添加8080端口</span>
+<span class="token comment">#centos8</span>
+firewall-cmd --zone<span class="token operator">=</span>public --add-port<span class="token operator">=</span><span class="token number">8080</span>/tcp --permanent <span class="token comment">#放行8080端口</span>
+--permanent <span class="token comment">#永久生效，没有此参数，重启后失效</span></code></pre></li>
+<li><p>查看开放的端口</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">firewall-cmd --list-all</code></pre></li>
+<li><p>重启防火墙</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh"># centos7
+systemctl start iptables.service  #开启防火墙
+systemctl stop iptables  #关闭防火墙
+# centos8
+systemctl stop firewalld.service #（关闭防火墙）
+systemctl start firewalld.service #（开启防火墙）
+systemctl disable firewalld.service #（禁止防火墙自启动）
+systemctl enable firewalld.service #（防火墙随系统开启启动）
+firewall-cmd –-reload
+# 设置只允许某个ip访问特定的端口
+firewall-cmd --permanent --add-rich-rule&#x3D;&quot;rule family&#x3D;&quot;ipv4&quot; source address&#x3D;&quot;127.0.0.1&quot; port protocol&#x3D;&quot;tcp&quot; port&#x3D;&quot;8888&quot; accept&quot;</code></pre></li>
 </ul>
 
                 
